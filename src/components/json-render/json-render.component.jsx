@@ -14,6 +14,7 @@ function JsonRender({ json, parentPath = 'root', ...otherProps }) {
     const val = value[1];
     const type = getValueType(val);
     const currentPath = `${parentPath}.${key}`;
+    const JsonRenderMemo = memo(JsonRender);
 
     if (type === 'Array' || type === 'Object') {
       return (
@@ -27,7 +28,7 @@ function JsonRender({ json, parentPath = 'root', ...otherProps }) {
           <div className="val">
             {
               expandedItems[currentPath] ?
-              <JsonRender
+              <JsonRenderMemo
                 json={val}
                 parentPath={currentPath}
                 {...otherProps}
@@ -39,11 +40,7 @@ function JsonRender({ json, parentPath = 'root', ...otherProps }) {
       );
     }
 
-    return (
-      <div key={currentPath}>
-        {`"${key}": `} <JsonItem value={val} />
-      </div>
-    );
+    return <JsonItem key={currentPath} value={val} keyValue={key} />;
   });
 }
 

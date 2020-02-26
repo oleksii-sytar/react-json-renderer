@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 
 import { getValueType } from "../../utils";
 
-const JsonItem = ({ value }) => {
+const JsonItemValue = ({ value }) => {
   const type = getValueType(value);
   
   switch (type) {
@@ -16,5 +16,9 @@ const JsonItem = ({ value }) => {
       return <span style={{ color: 'rgb(31, 49, 255)' }}>{`${value}`}</span>;
   }
 }
+
+const JsonItem = ({ keyValue, value }) => (<div>
+  {`"${keyValue}": `} <JsonItemValue value={value} />
+</div>)
 
 export default memo(JsonItem);

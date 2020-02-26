@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 
 import JsonRender from "../json-render/json-render.component";
 
@@ -9,29 +9,36 @@ const JsonView = ({ json }) => {
 
   const jsonParsed = useMemo(() => JSON.parse(json), [json]);
 
+  const isExpandedItems = useMemo(() => !!Object.keys(expandedItems).length, [expandedItems]);
+
   const deepItemsKeys = useMemo(
     () => deeepNames(jsonParsed).reduce((acc, val) => ({ ...acc, [val]: true,}), {}),
     [jsonParsed]
   );
 
+  const setExpandedItem = useCallback(
+    (name, value) => setExpandedItems({ ...expandedItems, [name]: value }),
+    [expandedItems]
+  );
+
   return (
     <div>
       <button onClick={() => {
-        if (Object.keys(expandedItems).length) {
+        if (isExpandedItems) {
           setExpandedItems({});
         } else {
           setExpandedItems(deepItemsKeys);
         }
       }}>
         {
-          Object.keys(expandedItems).length ? 'Collapse all' : 'Expand all'
+          isExpandedItems ? 'Collapse all' : 'Expand all'
         }
       </button>
 
       <div>
         <JsonRender
           json={jsonParsed}
-          setExpandedItem={(name, value) => setExpandedItems({ ...expandedItems, [name]: value })}
+          setExpandedItem={setExpandedItem}
           expandedItems={expandedItems}
         />
       </div>
