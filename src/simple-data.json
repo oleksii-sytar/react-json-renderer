@@ -1,0 +1,47 @@
+{
+  "_id": "5e5589e3e5dcda77e409882f",
+  "index": 0,
+  "guid": "bbe55ba7-5d65-4d2e-a513-cd01baeeb8da",
+  "isActive": false,
+  "balance": "$3,298.71",
+  "picture": "http://placehold.it/32x32",
+  "age": 30,
+  "eyeColor": "green",
+  "name": "Patterson Petty",
+  "gender": "male",
+  "company": "ZENTILITY",
+  "email": "pattersonpetty@zentility.com",
+  "phone": "+1 (948) 455-3717",
+  "address": "763 McClancy Place, Camino, Colorado, 3969",
+  "about": "Deserunt ipsum laboris aliquip veniam non veniam amet est ad dolore enim amet irure. Eiusmod nostrud officia dolor ullamco eiusmod eiusmod aute sit qui. Aliquip ex tempor cupidatat magna labore commodo sunt nisi ullamco eu. Adipisicing minim dolore adipisicing reprehenderit incididunt eu qui fugiat aliquip pariatur. Reprehenderit cupidatat ea est pariatur ea sunt sunt ullamco sunt duis esse proident Lorem mollit.\r\n",
+  "registered": "2014-03-22T10:53:20 -02:00",
+  "coordinates": {
+    "latitude": 83.129068,
+    "longitude": 60.696773
+  },
+  "tags": [
+    "nisi",
+    "et",
+    "Lorem",
+    "elit",
+    "sint",
+    "id",
+    "eiusmod"
+  ],
+  "friends": [
+    {
+      "id": 0,
+      "name": "Opal Cross"
+    },
+    {
+      "id": 1,
+      "name": "Mcintosh Buck"
+    },
+    {
+      "id": 2,
+      "name": "Rocha Bradshaw"
+    }
+  ],
+  "greeting": "Hello, Patterson Petty! You have 5 unread messages.",
+  "favoriteFruit": "apple"
+}
